@@ -3,110 +3,158 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Client Experience</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<title>Client Experience</title>
 
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 }
 
 body{
-    background:#f7f8fc;
+background:#f7f7f7;
 }
 
-.section{
-    width:90%;
-    max-width:1200px;
-    margin:80px auto;
+.client-section{
+
+padding:100px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:70px;
+min-height:100vh;
+
 }
 
-.heading{
-    text-align:center;
-    margin-bottom:60px;
+.left{
+
+flex:1;
+
 }
 
-.heading h4{
-    color:#6b7280;
-    font-size:15px;
-    text-transform:uppercase;
-    letter-spacing:3px;
-    font-weight:600;
+.subtitle{
+
+color:#8a8a8a;
+font-size:.9rem;
+letter-spacing:4px;
+text-transform:uppercase;
+margin-bottom:20px;
+
 }
 
-.heading h1{
-    margin-top:10px;
-    font-size:52px;
-    color:#1f2937;
+.title{
+
+font-size:4rem;
+font-weight:700;
+line-height:1;
+color:#111;
+margin-bottom:30px;
+
 }
 
-.heading p{
-    width:65%;
-    margin:18px auto 0;
-    color:#6b7280;
-    line-height:1.8;
-    font-size:17px;
+.description{
+
+font-size:18px;
+line-height:1.8;
+color:#666;
+max-width:500px;
+
 }
 
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:30px;
+.right{
+
+flex:1;
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:25px;
+
 }
 
-.card{
-    background:#fff;
-    border-radius:18px;
-    padding:40px;
-    box-shadow:0 12px 35px rgba(0,0,0,.08);
-    transition:.35s ease;
+.box{
+
+background:#fff;
+padding:35px;
+border-radius:18px;
+box-shadow:0 20px 40px rgba(0,0,0,.06);
+transition:.35s;
+
 }
 
-.card:hover{
-    transform:translateY(-8px);
+.box:hover{
+
+transform:translateY(-10px);
+
 }
 
 .icon{
-    width:70px;
-    height:70px;
-    border-radius:18px;
-    background:#1f2937;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:30px;
-    color:#fff;
-    margin-bottom:25px;
+
+font-size:35px;
+margin-bottom:20px;
+
 }
 
-.card h2{
-    color:#111827;
-    margin-bottom:20px;
+.box h3{
+
+margin-bottom:15px;
+color:#111;
+
 }
 
-.card ul{
-    list-style:none;
+.box p{
+
+color:#666;
+font-size:15px;
+line-height:1.8;
+
 }
 
-.card li{
-    margin:15px 0;
-    color:#4b5563;
-    position:relative;
-    padding-left:22px;
+.highlight{
+
+background:#111;
+color:white;
+
 }
 
-.card li::before{
-    content:"✓";
-    color:#10b981;
-    font-weight:bold;
-    position:absolute;
-    left:0;
+.highlight h3,
+.highlight p{
+
+color:white;
+
+}
+
+@media(max-width:900px){
+
+.client-section{
+
+flex-direction:column;
+text-align:center;
+
+}
+
+.description{
+
+max-width:100%;
+
+}
+
+.right{
+
+grid-template-columns:1fr;
+
+}
+
+.title{
+
+font-size:3rem;
+
+}
+
 }
 
 </style>
@@ -115,65 +163,72 @@ body{
 
 <body>
 
-<section class="section">
+<section class="client-section">
 
-<div class="heading">
+<div class="left">
 
-<h4>Core Expertise</h4>
+<p class="subtitle">
+CLIENT EXPERIENCE
+</p>
 
-<h1>Client Experience</h1>
+<h1 class="title">
+Email &<br>
+File Management
+</h1>
 
-<p>
-Creating exceptional client experiences through organized email management,
-secure file organization, and professional communication.
+<p class="description">
+Keeping your business organized with structured inbox management, secure document handling, and efficient file systems that improve communication and productivity.
 </p>
 
 </div>
 
-<div class="cards">
+<div class="right">
 
-<div class="card">
+<div class="box highlight">
 
 <div class="icon">📧</div>
 
-<h2>Email Management</h2>
+<h3>Email Organization</h3>
 
-<ul>
-<li>Inbox Organization</li>
-<li>Email Prioritization</li>
-<li>Draft & Reply Emails</li>
-<li>Client Follow-ups</li>
-</ul>
+<p>
+Sort, prioritize, and manage inboxes to ensure timely responses and a clutter-free workflow.
+</p>
 
 </div>
 
-<div class="card">
+<div class="box">
 
 <div class="icon">📁</div>
 
-<h2>File Management</h2>
+<h3>File Management</h3>
 
-<ul>
-<li>Cloud Storage Management</li>
-<li>File Organization</li>
-<li>Document Archiving</li>
-<li>Confidential Records</li>
-</ul>
+<p>
+Maintain organized cloud storage and digital files for quick access and secure documentation.
+</p>
 
 </div>
 
-<div class="card">
+<div class="box">
 
-<div class="icon">💬</div>
+<div class="icon">📂</div>
 
-<h2>Client Communication</h2>
+<h3>Document Control</h3>
 
-<ul>
-<li>Professional Correspondence</li>
-<li>Status Updates</li>
-<li>Request Coordination</li>
-<li>Customer Support</li>
-</ul>
+<p>
+Prepare, organize, and maintain business documents while protecting confidential information.
+</p>
+
+</div>
+
+<div class="box">
+
+<div class="icon">🤝</div>
+
+<h3>Client Communication</h3>
+
+<p>
+Deliver professional correspondence and consistent follow-ups to build strong client relationships.
+</p>
 
 </div>
 
