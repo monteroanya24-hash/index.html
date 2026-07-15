@@ -1,412 +1,453 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Client Experience</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
-
-body{
-
-background:#f8fafc;
-color:#1f2937;
-
-}
-
-.client-section{
-
-max-width:1300px;
-margin:auto;
-padding:100px 7%;
-
-}
-
-/* Header */
-
-.header{
-
-display:flex;
-justify-content:space-between;
-align-items:flex-end;
-gap:40px;
-margin-bottom:70px;
-flex-wrap:wrap;
-
-}
-
-.subtitle{
-
-font-size:14px;
-letter-spacing:4px;
-text-transform:uppercase;
-color:#6b7280;
-font-weight:600;
-margin-bottom:18px;
-
-}
-
-.title{
-
-font-size:58px;
-font-weight:700;
-line-height:1.1;
-color:#111827;
-
-}
-
-.description{
-
-max-width:480px;
-font-size:17px;
-line-height:1.9;
-color:#6b7280;
-
-}
-
-/* Cards */
-
-.grid{
-
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-gap:35px;
-
-}
-
-.card{
-
-background:white;
-border-radius:24px;
-padding:40px;
-box-shadow:0 20px 40px rgba(0,0,0,.06);
-transition:.35s;
-position:relative;
-overflow:hidden;
-
-}
-
-.card::before{
-
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:5px;
-background:linear-gradient(90deg,#0f172a,#2563eb);
-
-}
-
-.card:hover{
-
-transform:translateY(-10px);
-
-box-shadow:0 35px 60px rgba(0,0,0,.10);
-
-}
-
-.icon{
-
-width:70px;
-height:70px;
-border-radius:18px;
-
-background:#0f172a;
-color:white;
-
-display:flex;
-justify-content:center;
-align-items:center;
-
-font-size:28px;
-
-margin-bottom:25px;
-
-}
-
-.card h2{
-
-font-size:26px;
-margin-bottom:18px;
-color:#111827;
-
-}
-
-.card p{
-
-color:#6b7280;
-line-height:1.8;
-margin-bottom:25px;
-
-}
-
-.card ul{
-
-list-style:none;
-
-}
-
-.card li{
-
-padding:14px 0;
-border-bottom:1px solid #edf2f7;
-color:#4b5563;
-font-size:15px;
-
-}
-
-.card li:last-child{
-
-border-bottom:none;
-
-}
-
-.card li i{
-
-color:#2563eb;
-margin-right:10px;
-
-}
-
-/* Bottom Banner */
-
-.banner{
-
-margin-top:70px;
-
-background:linear-gradient(135deg,#111827,#1e3a8a);
-
-padding:60px;
-
-border-radius:25px;
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-flex-wrap:wrap;
-
-gap:30px;
-
-}
-
-.banner h2{
-
-color:white;
-font-size:36px;
-
-}
-
-.banner p{
-
-color:#d1d5db;
-max-width:550px;
-line-height:1.8;
-
-}
-
-.button{
-
-padding:16px 35px;
-
-background:white;
-
-border-radius:50px;
-
-text-decoration:none;
-
-font-weight:600;
-
-color:#111827;
-
-transition:.3s;
-
-}
-
-.button:hover{
-
-background:#2563eb;
-color:white;
-
-}
-
-/* Mobile */
-
-@media(max-width:900px){
-
-.title{
-
-font-size:42px;
-
-}
-
-.banner{
-
-text-align:center;
-
-justify-content:center;
-
-}
-
-}
-
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Fragrances | Discover Your Signature Scent</title>
+    <style>
+        /* --- DESIGN SYSTEM & CONSTANTS --- */
+        :root {
+            --bg-dark: #0a1128;
+            --burgundy: #4a0e17;
+            --gold: #d4af37;
+            --light-gold: #f3e5ab;
+            --text-light: #ffffff;
+            --text-muted: #cccccc;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --font-serif: 'Playfair Display', Georgia, serif;
+            --font-sans: 'Montserrat', sans-serif;
+        }
+
+        /* --- GLOBAL RESETS --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-color: inherit;
+            text-decoration: none;
+        }
+
+        /* --- NAVIGATION --- */
+        header {
+            background-color: rgba(10, 17, 40, 0.95);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            color: var(--gold);
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--gold);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            min-height: 85vh;
+            padding-top: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--bg-dark) 30%, var(--burgundy) 100%);
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 40px 20px;
+        }
+
+        .hero h3 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-family: var(--font-serif);
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 35px;
+        }
+
+        .btn {
+            background-color: transparent;
+            color: var(--gold);
+            border: 2px solid var(--gold);
+            padding: 12px 35px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--gold);
+            color: var(--bg-dark);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+        }
+
+        /* --- BRAND FEATURES BREAKDOWN --- */
+        .features {
+            background-color: #070c1d;
+            padding: 60px 20px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .features-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .feature-item h4 {
+            color: var(--gold);
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .feature-item p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* --- PRODUCTS GRID SECTION --- */
+        .catalog {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .product-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 350px;
+            background-color: #121b3a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--burgundy);
+            color: var(--gold);
+            padding: 5px 12px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid var(--gold);
+        }
+
+        .product-info {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .product-info h3 {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .product-type {
+            font-size: 0.8rem;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .product-desc {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .product-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+        }
+
+        .price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--light-gold);
+        }
+
+        .btn-sm {
+            padding: 8px 20px;
+            font-size: 0.8rem;
+        }
+
+        /* --- FOOTER BANNER --- */
+        footer {
+            background-color: #050814;
+            padding: 60px 20px;
+            text-align: center;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .footer-tagline {
+            font-family: var(--font-serif);
+            color: var(--gold);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .footer-sub {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+        }
+
+        .copyright {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* --- MOBILE RESPONSIVENESS --- */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            nav ul {
+                display: none; /* Can be enhanced with JS mobile menu drawer later */
+            }
+        }
+    </style>
+    <!-- Google Fonts Links for Premium Styling -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-<section class="client-section">
+    <!-- NAVIGATION BAR -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">HAUTE SCENT</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#collection">Discovery Kits</a></li>
+                    <li><a href="#signature">Signature Perfumes</a></li>
+                    <li><a href="#contact">Our Story</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-<div class="header">
+    <!-- HERO INTRODUCTION -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h3>Explore. Discover. Find Your Signature.</h3>
+            <h1>20 SCENTS.<br>Endless Possibilities.</h1>
+            <p>A world of premium fragrances curated for every mood, every moment, every you.</p>
+            <a href="#collection" class="btn">Discover Today</a>
+        </div>
+    </section>
 
-<div>
+    <!-- CORE SELLING POINTS -->
+    <section class="features">
+        <div class="features-grid">
+            <div class="feature-item">
+                <h4>20 Unique Scents</h4>
+                <p>A variety for every mood and every occasion.</p>
+            </div>
+            <div class="feature-item">
+                <h4>Premium Quality</h4>
+                <p>Finest ingredients for long-lasting impressions.</p>
+            </div>
+            <div class="feature-item">
+                <h4>Perfect to Gift</h4>
+                <p>Thoughtful, elegant, and highly memorable.</p>
+            </div>
+            <div class="feature-item">
+                <h4>Find Your Signature</h4>
+                <p>Because every moment deserves the perfect scent.</p>
+            </div>
+        </div>
+    </section>
 
-<p class="subtitle">
-Core Expertise
-</p>
+    <!-- PRODUCT CATALOG -->
+    <section class="catalog" id="collection">
+        <div class="section-title">
+            <h2>The Premium Collection</h2>
+            <p>Small Bottles. Big Memories.</p>
+        </div>
 
-<h1 class="title">
-Client Experience
-</h1>
+        <div class="product-grid">
+            <!-- Product Item 1: Discovery Box -->
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="badge">Best Seller</span>
+                    <!-- Place your 20-scents wallet picture here -->
+                    <img src="https://via.placeholder.com/400x500" alt="20 Scents Vault Pack">
+                </div>
+                <div class="product-info">
+                    <span class="product-type">Discovery Vault Set</span>
+                    <h3>20 Scents Experience Case</h3>
+                    <p class="product-desc">A travel-friendly complete luxury leather-bound portfolio containing 20 distinct sample vials to match your alternating daily aesthetics.</p>
+                    <div class="product-meta">
+                        <span class="price">$49.00</span>
+                        <button class="btn btn-sm">Add to Bag</button>
+                    </div>
+                </div>
+            </div>
 
-</div>
+            <!-- Product Item 2: Signature Standalone Bottle -->
+            <div class="product-card">
+                <div class="product-image">
+                    <!-- Place your Choco Blast bottle picture here -->
+                    <img src="https://via.placeholder.com/400x500" alt="Choco Blast Eau De Parfum">
+                </div>
+                <div class="product-info">
+                    <span class="product-type">Eau De Parfum</span>
+                    <h3>Choco Blast</h3>
+                    <p class="product-desc">Sweet. Playful. Unforgettable. A deliciously rich, warm sweet accent profile that confidently leaves an irresistible lasting impression.</p>
+                    <div class="product-meta">
+                        <span class="price">$65.00</span>
+                        <button class="btn btn-sm">Add to Bag</button>
+                    </div>
+                </div>
+            </div>
 
-<p class="description">
+            <!-- Product Item 3: Home Fragrance -->
+            <div class="product-card">
+                <div class="product-image">
+                    <!-- Place your Red Reed Diffuser Home Fragrance picture here -->
+                    <img src="https://via.placeholder.com/400x500" alt="Home Fragrance Diffuser Set">
+                </div>
+                <div class="product-info">
+                    <span class="product-type">Relax At Home</span>
+                    <h3>Imperial Red Diffuser Set</h3>
+                    <p class="product-desc">Relax, refresh, and reconnect. Beautifully transforms your living spaces into a calming and deeply elegant escape.</p>
+                    <div class="product-meta">
+                        <span class="price">$38.00</span>
+                        <button class="btn btn-sm">Add to Bag</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-Providing exceptional client support through organized email management,
-secure document handling, and efficient communication that keeps businesses
-running smoothly.
-
-</p>
-
-</div>
-
-<div class="grid">
-
-<div class="card">
-
-<div class="icon">
-<i class="fa-solid fa-envelope"></i>
-</div>
-
-<h2>Email Management</h2>
-
-<p>
-Maintain a clean, organized inbox while ensuring every message is prioritized and responded to professionally.
-</p>
-
-<ul>
-
-<li><i class="fa-solid fa-check"></i> Inbox Organization</li>
-
-<li><i class="fa-solid fa-check"></i> Email Prioritization</li>
-
-<li><i class="fa-solid fa-check"></i> Client Correspondence</li>
-
-<li><i class="fa-solid fa-check"></i> Follow-up Management</li>
-
-</ul>
-
-</div>
-
-<div class="card">
-
-<div class="icon">
-<i class="fa-solid fa-folder-open"></i>
-</div>
-
-<h2>File Management</h2>
-
-<p>
-Organize business documents using structured cloud storage systems for quick, secure, and reliable access.
-</p>
-
-<ul>
-
-<li><i class="fa-solid fa-check"></i> Cloud Storage</li>
-
-<li><i class="fa-solid fa-check"></i> File Organization</li>
-
-<li><i class="fa-solid fa-check"></i> Document Archiving</li>
-
-<li><i class="fa-solid fa-check"></i> Confidential Records</li>
-
-</ul>
-
-</div>
-
-<div class="card">
-
-<div class="icon">
-<i class="fa-solid fa-users"></i>
-</div>
-
-<h2>Client Support</h2>
-
-<p>
-Deliver professional communication and dependable assistance to strengthen relationships and enhance client satisfaction.
-</p>
-
-<ul>
-
-<li><i class="fa-solid fa-check"></i> Professional Communication</li>
-
-<li><i class="fa-solid fa-check"></i> Request Coordination</li>
-
-<li><i class="fa-solid fa-check"></i> Issue Resolution</li>
-
-<li><i class="fa-solid fa-check"></i> Relationship Management</li>
-
-</ul>
-
-</div>
-
-</div>
-
-<div class="banner">
-
-<div>
-
-<h2>Organized. Responsive. Reliable.</h2>
-
-<p>
-
-Creating exceptional client experiences through efficient communication,
-structured workflows, and meticulous file management that help businesses
-operate with confidence.
-
-</p>
-
-</div>
-
-<a href="#" class="button">
-Let's Work Together
-</a>
-
-</div>
-
-</section>
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-tagline">Small Bottles. Big Impressions.</div>
+        <div class="footer-sub">Choose your scent. Create your moment.</div>
+        <div class="copyright">&copy; 2026 Haute Scent Luxury Perfumes. All Rights Reserved.</div>
+    </footer>
 
 </body>
 </html>
